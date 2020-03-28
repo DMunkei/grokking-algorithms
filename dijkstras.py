@@ -10,27 +10,29 @@
 infinity = float("inf")
 graph ={}
 graph["start"] = {}
-graph["start"]["a"] = 6
+graph["start"]["a"] = 6 #setting a and b as neighbours in the path
 graph["start"]["b"] = 2
+#setting the nodes connected with a
 graph["a"] ={}
 graph["a"]["end"] =1
-
+#setting the nodes connected with b
 graph["b"]={}
 graph["b"]["a"]=3
 graph["b"]["end"]=5
 
 graph["end"]={}
-
+#how much weight, going from the start to another node
 costs ={}
 costs["a"] = 6
 costs["b"] = 2
 costs["end"] = infinity
-
+#parents declares which node to use to get to the respective node. ie: to get to 'a' you need to go from 'start'
 parents ={}
 parents["a"] = "start"
 parents["b"] = "start"
 parents["end"] = None
 
+#so we dont end up in a endless loop, we need to mark the nodes that have been checked
 processed = []
 
 
